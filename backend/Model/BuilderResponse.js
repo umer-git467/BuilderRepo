@@ -1,0 +1,66 @@
+const mongoose = require('mongoose');
+const builderResponseSchema = new mongoose.Schema({
+    projectType: {
+        type: String,
+        required: true,
+        enum: ['home', 'hospital', 'university']
+    },
+    // Common fields
+    projectName: {type: String, required: true},
+    clientName: {type: String, required: true},
+    price: {type: String, required: true},
+    floors: {type: String, required: true},
+    location: {type: String, required: true},
+    squareFeet: {type: String, required: true},
+    clientcomment: {type: [String], default: []},
+    postedDate: {type: Date, default: Date.now}, 
+    eventTypeClient: {type: String, default: 'null'},
+    clientId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Client'},
+    projectId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'ClientprojectDetail'},
+    builderId: {type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Builder'},
+    builderName: {type: String, required: true},
+    builderComment: {type: [String], default: []},
+    builderPrice: {type: String},
+    status: {type: String, enum: ['pending', 'In Progress', 'rejected', 'Closed', 'Complete'], default: 'pending'},
+    eventTypeBuilder: {type: String},
+    startDate: {type: Date, default: null},
+    endDate: {type: Date, default: null},
+    rating: {type: Number, min: 1, max: 5, default: null},
+    feedback: { type: String, default: null },
+    // Project-specific fields (not required by default)
+    bedrooms: String,
+    washrooms: String,
+    kitchens: String,
+    storeRooms: String,
+    generalWards: String,
+    privateRooms: String,
+    icuRooms: String,
+    operationTheaters: String,
+    emergencyRooms: String,
+    recoveryRooms: String,
+    isolationRooms: String,
+    classrooms: String,
+    laboratories: String,  
+    lectureHalls: String, 
+    facultyOffices: String,
+    libraryCapacity: String,
+    cafeteriaCapacity: String,
+
+    brickQuality: String,   
+    concreteQuality: String,
+    steelQuantity: String,
+    cementCompany: String,
+    paintCompany: String,
+    ceiling: String,
+    switchPlate: String,
+    gate: String,
+    woodWork: String,
+    kitchenWork: String,
+    electricCable: String,
+    sewerage : String,
+    automaticMainSwitch: String,
+});
+
+const BuilderResponse = mongoose.model('BuilderResponse', builderResponseSchema);
+
+module.exports = BuilderResponse;

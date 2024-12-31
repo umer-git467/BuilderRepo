@@ -1,0 +1,52 @@
+const mongoose = require('mongoose');
+const clientprojectDetailSchema = new mongoose.Schema({
+    projectName: { type: String, required: true },
+    projectType: { type: String, required: true },
+    clientName: { type: String, required: true },
+    price: { type: String, required: true },
+    location: { type: String, required: true },
+    squareFeet: { type: String, required: true },
+    clientcomment: { type: [String], default: [] },
+    floors: { type: String, required: true },
+    bedrooms: { type: String },
+    washrooms: { type: String },
+    kitchens: { type: String },
+    storeRooms: { type: String },
+    generalWards: { type: String },
+    privateRooms: { type: String },
+    icuRooms: { type: String },
+    operationTheaters: { type: String },
+    emergencyRooms: { type: String },
+    recoveryRooms: { type: String },
+    isolationRooms: { type: String },
+    classrooms: { type: String },
+    laboratories: { type: String },
+    lectureHalls: { type: String },
+    facultyOffices: { type: String },
+    libraryCapacity: { type: String },
+    cafeteriaCapacity: { type: String },
+
+    brickQuality: { type: String },
+    concreteQuality: { type: String },
+    steelQuantity: { type: String },
+    cementCompany: { type: String },
+    paintCompany: { type: String },
+    ceiling: { type: String },
+    switchPlate: { type: String },
+    gate: { type: String },
+    woodWork: { type: String },
+    kitchenWork: { type: String },
+    electricCable: { type: String },
+    sewerage: { type: String },
+    automaticMainSwitch: { type: String },
+    
+    postedDate: { type: Date, default: Date.now },
+    eventTypeClient: { type: String, default: 'null' },
+    clientId: { type: mongoose.Schema.Types.ObjectId, required: true, ref: 'Client' },
+    builderId: { type: [mongoose.Schema.Types.ObjectId], default: [], ref: 'Builder' },
+    eventTypeBuilder: { type: String, default: 'null' },
+});
+
+const ClientprojectDetail = mongoose.model('ClientprojectDetail', clientprojectDetailSchema);
+
+module.exports = ClientprojectDetail;
