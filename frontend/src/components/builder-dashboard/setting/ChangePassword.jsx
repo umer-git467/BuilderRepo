@@ -32,7 +32,7 @@ const ChangePasswordModal = ({ onClose }) => {
 
     try {
       const builder = JSON.parse(sessionStorage.getItem("builder"));
-      const response = await axios.post("http://localhost:5006/change-builder-password", {
+      const response = await axios.post("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/change-builder-password", {
         builderId: builder._id,
         currentPassword,
         newPassword,

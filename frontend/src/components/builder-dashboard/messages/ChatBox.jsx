@@ -3,7 +3,7 @@ import { IoNavigateCircle } from "react-icons/io5";
 import io from 'socket.io-client';
 import axios from 'axios';
 
-const socket = io('http://localhost:5006');
+const socket = io('');
 function Chatbuilder({ selectedUser, currentUser }) {
   const [messages, setMessages] = useState([]);
   const [newMessage, setNewMessage] = useState("");
@@ -17,7 +17,7 @@ function Chatbuilder({ selectedUser, currentUser }) {
 
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:5006/chat/messages`, {
+        const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/chat/messages`, {
           params: {
             senderId: currentUser._id,
             receiverId: selectedUser.id

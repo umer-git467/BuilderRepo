@@ -14,7 +14,7 @@ const ClientTableClietnDashborad = ({ searchTerm }) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5006/Builderlist"); // Your backend API route
+        const response = await fetch("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/Builderlist"); // Your backend API route
         const data = await response.json();
         setTableData(data); 
         setLoading(false);

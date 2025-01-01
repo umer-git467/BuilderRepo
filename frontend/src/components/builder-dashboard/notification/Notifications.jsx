@@ -57,7 +57,7 @@ const NotificationTable = ({ searchTerm }) => {
     const builderName = `${builderFirstName} ${builderLastName}`.trim();
 
     try {
-      const response = await axios.post("http://localhost:5006/add-builder-response", {
+      const response = await axios.post("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/add-builder-response", {
         projectId: selectedNotification._id,
         builderId,
         builderName,
@@ -113,7 +113,7 @@ const NotificationTable = ({ searchTerm }) => {
 
       console.log("Builder response added:", response.data);
 
-      await axios.put(`http://localhost:5006/Client-Project-Detail/${selectedNotification._id}`, {
+      await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/Client-Project-Detail/${selectedNotification._id}`, {
         builderId
       });
 
@@ -132,7 +132,7 @@ const NotificationTable = ({ searchTerm }) => {
       const builderid = JSON.parse(sessionStorage.getItem("builder"));
       const builderId = builderid?._id;
 
-      const response = await axios.get(`http://localhost:5006/combined-projects`, {
+      const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/combined-projects`, {
         params: { builderId, eventType }
       });
 

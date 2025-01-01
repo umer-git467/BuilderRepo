@@ -37,7 +37,7 @@ const ChangePasswordModal = ({ onClose }) => {
         return;
       }
     
-      const response = await axios.post("http://localhost:5006/change-client-password", {
+      const response = await axios.post("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/change-client-password", {
         clientId: client._id,
         currentPassword,
         newPassword,

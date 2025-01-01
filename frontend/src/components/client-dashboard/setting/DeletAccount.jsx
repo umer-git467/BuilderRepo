@@ -13,7 +13,7 @@ const DeleteAccountWarning = ({ onClose }) => {
         return;
       }
 
-      await axios.delete(`http://localhost:5006/delete-client/${client._id}`);
+      await axios.delete(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/delete-client/${client._id}`);
       
       sessionStorage.removeItem("client");
       navigate("/");

@@ -35,7 +35,7 @@ const PersonalInfoModal = ({ onClose }) => {
   const handleSave = async () => {
     try {
       const builder = JSON.parse(sessionStorage.getItem("builder"));
-      const response = await axios.put(`http://localhost:5006/update-builder/${builder._id}`, builderInfo);
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/update-builder/${builder._id}`, builderInfo);
       if (response.data.message === "Builder updated successfully") {
         sessionStorage.setItem("builder", JSON.stringify({ ...builder, ...builderInfo }));
         setIsEditing(false);

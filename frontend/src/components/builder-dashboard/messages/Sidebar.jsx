@@ -13,7 +13,7 @@ function Sidebarbuilder({ selectUser, currentUser }) {
         try {
             // Only fetch direct messages since we want to show message-based contacts
             const directMessagesResponse = await axios.get(
-                `http://localhost:5006/chat/builder-clients/${currentUser._id}`
+                `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/chat/builder-clients/${currentUser._id}`
             );
 
             const directClients = directMessagesResponse.data.map(chat => ({

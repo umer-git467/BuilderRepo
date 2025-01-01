@@ -290,7 +290,7 @@ function Project() {
     };
 
     try {
-      const response = await axios.post("http://localhost:5006/Client-Project-Detail", projectDataWithId);
+      const response = await axios.post("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/Client-Project-Detail", projectDataWithId);
       console.log("Data saved:", response.data);
       toast.success('Project Post successfully', {
         position: "top-right",

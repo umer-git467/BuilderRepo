@@ -20,7 +20,7 @@ function Messageclient({ initialSelectedUser }) {
 
       const fetchProjects = async () => {
         try {
-          const response = await axios.get(`http://localhost:5006/accepted-projectsclientId/${user._id}`);
+          const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/accepted-projectsclientId/${user._id}`);
           setProjects(response.data.data.filter(project => project.status === 'In Progress' || project.status === 'Complete'));
         } catch (error) {
           console.error('Error fetching projects:', error);

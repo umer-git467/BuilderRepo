@@ -36,7 +36,7 @@ function HomeTableClientDashboard({ searchTerm }) {
         return;
       }
 
-      const response = await axios.get(`http://localhost:5006/accepted-projectsclientId/${clientId}`);
+      const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/accepted-projectsclientId/${clientId}`);
       setTableData(response.data.data);
     } catch (error) {
       console.error("Error fetching accepted projects:", error);

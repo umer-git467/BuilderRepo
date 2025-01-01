@@ -24,7 +24,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
   // function to fetch projects based on event type
   const fetchProjects = async (eventType = '') => {
     try {
-      const response = await axios.get(`http://localhost:5006/projects/builder${eventType ? `/${eventType}` : ''}`);
+      const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/projects/builder${eventType ? `/${eventType}` : ''}`);
       const filteredProjects = response.data.data.filter(item => item.clientId === clientId);
       setTableData(filteredProjects);
     } catch (error) {
@@ -63,7 +63,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.put(`http://localhost:5006/rate-project/${selectedNotification._id}`, {
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/rate-project/${selectedNotification._id}`, {
         rating: tempRating,
         feedback: feedback
       });
@@ -112,7 +112,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
   // function to reject project
   const handleRejectProject = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:5006/update/${id}`, {
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/update/${id}`, {
         status: "rejected",
         eventTypeClient: "Notification",
         eventTypeBuilder: "Notification"
@@ -129,7 +129,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
   // function to accept project
   const handleAcceptProject = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:5006/accept/${id}`);
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/accept/${id}`);
       if (response.status === 200) {
         console.log("Project accepted successfully");
         setShowPopup(false);  // Close the popup after acceptance
@@ -151,7 +151,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
 
   const handleAcceptCompletedProject = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:5006/complete-project/${id}`, {
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/complete-project/${id}`, {
         status: 'Complete',
         eventTypeClient: 'Notification',
         eventTypeBuilder: 'Notification'
@@ -169,7 +169,7 @@ const NotificationTable = ({ searchTerm, handleMenuClick }) => {
 
   const handleRejectCompletedProject = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:5006/reject-completed-project/${id}`, {
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/reject-completed-project/${id}`, {
         status: 'In Progress',
         eventTypeClient: 'Notification',
         eventTypeBuilder: 'Notification'

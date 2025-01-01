@@ -9,7 +9,7 @@ function ClientTable({ searchTerm }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5006/Clientlist"); // Your backend API route
+        const response = await fetch("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/Clientlist"); // Your backend API route
         const data = await response.json();
         setTableData(data); 
         setLoading(false);

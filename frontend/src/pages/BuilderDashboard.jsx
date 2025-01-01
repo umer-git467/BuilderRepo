@@ -71,7 +71,7 @@ const BuilderDashboard = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:5006/update-builder-image",
+          "https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/update-builder-image",
           {
             method: "POST",
             body: formData,
@@ -98,7 +98,7 @@ const BuilderDashboard = () => {
   const handleRemoveImage = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5006/remove-builder-image/${sessiondata._id}`,
+        `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/remove-builder-image/${sessiondata._id}`,
         {
           method: "DELETE",
         }
@@ -192,7 +192,7 @@ const BuilderDashboard = () => {
               }}
               src={
                 builderImage
-                  ? `http://localhost:5006${builderImage}`
+                  ? `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app${builderImage}`
                   : "https://via.placeholder.com/150"
               }
               alt="Builder"
@@ -313,7 +313,7 @@ const BuilderDashboard = () => {
                 <img
                   src={
                     builderImage
-                      ? `http://localhost:5006${builderImage}`
+                      ? `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app${builderImage}`
                       : "https://via.placeholder.com/150"
                   }
                   alt="Builder"

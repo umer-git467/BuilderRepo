@@ -55,7 +55,7 @@ function HomeTableBuilder({ searchTerm }) {
         return;
       }
 
-      const response = await axios.get(`http://localhost:5006/accepted-projectsbuilderId/${builderId}`);
+      const response = await axios.get(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/accepted-projectsbuilderId/${builderId}`);
       setTableData(response.data.data || []); // Set data or default to empty array
     } catch (error) {
       console.error("Error fetching accepted projects:", error);
@@ -69,7 +69,7 @@ function HomeTableBuilder({ searchTerm }) {
 
   const handleCompleteProject = async (id) => {
     try {
-      const response = await axios.put(`http://localhost:5006/complete/${id}`, {
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/complete/${id}`, {
         status: 'pending complete',
         eventTypeBuilder: 'Task',
         eventTypeClient: 'Task'

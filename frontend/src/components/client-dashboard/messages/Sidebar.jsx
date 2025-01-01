@@ -9,7 +9,7 @@ function Sidebarclient({ selectUser, currentUser }) {
   useEffect(() => {
     const fetchBuilders = async () => {
       try {
-        const response = await axios.get('http://localhost:5006/chat/builders');
+        const response = await axios.get('https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/chat/builders');
         setBuilders(response.data);
       } catch (error) {
         console.error('Error fetching builders:', error);

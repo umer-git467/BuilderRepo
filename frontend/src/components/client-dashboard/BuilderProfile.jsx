@@ -21,7 +21,7 @@ function BuilderProfile({ isOpen, onClose, builderData }) {
   const fetchCompletedProjects = async (builderId) => {
     try {
       const response = await fetch(
-        `http://localhost:5006/builder-completed-projects/${builderId}`
+        `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/builder-completed-projects/${builderId}`
       );
       const data = await response.json();
       setCompletedProjects(data);

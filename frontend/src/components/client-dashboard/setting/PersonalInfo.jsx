@@ -37,7 +37,7 @@ const PersonalInfoModal = ({ onClose }) => {
   const handleSave = async () => {
     try {
       const client = JSON.parse(sessionStorage.getItem("client"));
-      const response = await axios.put(`http://localhost:5006/update-client/${client._id}`, clientInfo);
+      const response = await axios.put(`https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/update-client/${client._id}`, clientInfo);
       if (response.data.message === "Client updated successfully") {
         sessionStorage.setItem("client", JSON.stringify({ ...client, ...clientInfo }));
         setIsEditing(false);

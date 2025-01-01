@@ -29,7 +29,7 @@ mongoose.connect(process.env.MONGO_URI)
 
 const port = process.env.PORT || 5006;
 
-app.use('/api', Routes);
+app.use('/', Routes);
 
 io.on('connection', (socket) => {
   console.log('New client connected');

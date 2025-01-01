@@ -20,7 +20,7 @@ function Client() {
     setSuccessMessage(""); 
   
     try {
-      const response = await fetch("http://localhost:5006/signup-Client", {
+      const response = await fetch("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/signup-Client", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

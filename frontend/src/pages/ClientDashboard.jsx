@@ -53,7 +53,7 @@ const ClientDashboard = () => {
 
       try {
         const response = await fetch(
-          "http://localhost:5006/update-client-image",
+          "https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/update-client-image",
           {
             method: "POST",
             body: formData,
@@ -80,7 +80,7 @@ const ClientDashboard = () => {
   const handleRemoveImage = async () => {
     try {
       const response = await fetch(
-        `http://localhost:5006/remove-client-image/${sessiondata._id}`,
+        `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/remove-client-image/${sessiondata._id}`,
         {
           method: "DELETE",
         }
@@ -204,7 +204,7 @@ const ClientDashboard = () => {
               }}
               src={
                 clientImage
-                  ? `http://localhost:5006${clientImage}`
+                  ? `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app${clientImage}`
                   : "https://via.placeholder.com/150"
               }
               alt="Client"
@@ -325,7 +325,7 @@ const ClientDashboard = () => {
                 <img
                   src={
                     clientImage
-                      ? `http://localhost:5006${clientImage}`
+                      ? `https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app${clientImage}`
                       : "https://via.placeholder.com/150"
                   }
                   alt="Client"

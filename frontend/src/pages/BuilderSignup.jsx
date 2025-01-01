@@ -20,7 +20,7 @@ function BuilderSignup() {
     setSuccessMessage(""); 
   
     try {
-      const response = await fetch("http://localhost:5006/signup-Builder", {
+      const response = await fetch("https://builder-repo-3zcu-neeryxas9-umer-git467s-projects.vercel.app/signup-Builder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
