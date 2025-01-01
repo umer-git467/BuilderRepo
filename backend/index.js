@@ -27,7 +27,9 @@ mongoose.connect(process.env.MONGO_URI)
     console.error('MongoDB connection error:', err);
   });
 
-app.use('/', Routes);
+const port = process.env.PORT || 5006;
+
+app.use('/api', Routes);
 
 io.on('connection', (socket) => {
   console.log('New client connected');
@@ -65,8 +67,6 @@ io.on('connection', (socket) => {
     console.log('Client disconnected');
   });
 });
-
-const port = process.env.PORT || 5006;
 
 server.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
