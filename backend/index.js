@@ -31,6 +31,10 @@ const port = process.env.PORT || 5006;
 
 app.use('/', Routes);
 
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
 io.on('connection', (socket) => {
   console.log('New client connected');
 
